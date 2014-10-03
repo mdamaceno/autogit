@@ -63,14 +63,14 @@ gcheckout() {
 }
 
 again() {
-  printf "## * Deseja encerrar o Autogit? [s/n]: "
+  printf "## * Deseja realizar outra ação com Autogit? [s/n]: "
   yorn
 
   if [[ $ANSWER == "s" ]]; then
-    finish && exit
-  elif [[ $ANSWER == "n" ]]; then
     ifoption
     actions
+  elif [[ $ANSWER == "n" ]]; then
+    finish && exit
   fi
 }
 
