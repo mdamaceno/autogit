@@ -28,8 +28,7 @@ ifoption() {
     # echo "## * Opção inválida! Selecione uma das opções abaixo:"
     options
     echo ""
-    printf "Opção: "
-    read -r OPTION
+    read -p "Opção: " OPTION
 
     if [[ $OPTION == "1" ]] || [[ $OPTION == "2" ]] || [[ $OPTION == "3" ]] || [[ $OPTION == "4" ]] || [[ $OPTION == "5" ]] || [[ $OPTION == "6" ]] || [[ $OPTION == "0" ]]
     then
