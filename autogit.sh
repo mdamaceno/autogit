@@ -8,7 +8,7 @@ yorn() {
     read -r ANSWER
 
     if [[ $ANSWER == "s" ]] || [[ $ANSWER == "n" ]]
-    then
+      then
       break
     fi
   done
@@ -20,6 +20,7 @@ options() {
   echo "3 - commit"
   echo "4 - merge"
   echo "5 - checkout"
+  echo "6 - nova branch"
   echo "0 - Sair"
 }
 
@@ -31,7 +32,7 @@ ifoption() {
     read -p "Opção: " OPTION
 
     if [[ $OPTION == "1" ]] || [[ $OPTION == "2" ]] || [[ $OPTION == "3" ]] || [[ $OPTION == "4" ]] || [[ $OPTION == "5" ]] || [[ $OPTION == "6" ]] || [[ $OPTION == "0" ]]
-    then
+      then
       break
     fi
   done
@@ -60,6 +61,10 @@ gmerge() {
 
 gcheckout() {
   git checkout $BRANCHWORDS;
+}
+
+gnewBranch() {
+  git checkout -b $BRANCHWORDS;
 }
 
 again() {
@@ -103,6 +108,12 @@ actions() {
     echo "## * Digite o nome da branch:"
     read BRANCHWORDS
     gcheckout
+    again
+
+  elif [[ $OPTION == "6" ]]; then
+    echo "## * Digite o nome da branch:"
+    read BRANCHWORDS
+    gnewBranch
     again
 
   elif [[ $OPTION == "0" ]]; then
