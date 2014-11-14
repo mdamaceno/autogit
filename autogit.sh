@@ -21,6 +21,7 @@ options() {
   echo "4 - merge"
   echo "5 - checkout"
   echo "6 - nova branch"
+  echo "7 - status"
   echo "0 - Sair"
 }
 
@@ -31,7 +32,7 @@ ifoption() {
     echo ""
     read -p "Opção: " OPTION
 
-    if [[ $OPTION == "1" ]] || [[ $OPTION == "2" ]] || [[ $OPTION == "3" ]] || [[ $OPTION == "4" ]] || [[ $OPTION == "5" ]] || [[ $OPTION == "6" ]] || [[ $OPTION == "0" ]]
+    if [[ $OPTION == "1" ]] || [[ $OPTION == "2" ]] || [[ $OPTION == "3" ]] || [[ $OPTION == "4" ]] || [[ $OPTION == "5" ]] || [[ $OPTION == "6" ]] || [[ $OPTION == "7" ]] || [[ $OPTION == "0" ]]
       then
       break
     fi
@@ -65,6 +66,10 @@ gcheckout() {
 
 gnewBranch() {
   git checkout -b $BRANCHWORDS;
+}
+
+gStatus() {
+  git status;
 }
 
 again() {
@@ -114,6 +119,10 @@ actions() {
     echo "## * Digite o nome da branch:"
     read BRANCHWORDS
     gnewBranch
+    again
+
+  elif [[ $OPTION == "7" ]]; then
+    gStatus
     again
 
   elif [[ $OPTION == "0" ]]; then
