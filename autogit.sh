@@ -94,7 +94,7 @@ actions() {
 
   elif [[ $OPTION == "3" ]]; then
     echo "## * Digite o comentário do commit:"
-    read COMMITWORDS
+    read -e COMMITWORDS
     gcommit
     again
 
