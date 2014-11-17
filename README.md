@@ -30,4 +30,4 @@ Você pode:
 * Enviar-me um email: maadamaceno@gmail.com
 * Contribuir com o projeto
 
-Todo feedback ou ajuda será bem vinda!
+Todo feedback ou ajuda serão bem vindos!
