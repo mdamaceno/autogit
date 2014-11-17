@@ -26,7 +26,7 @@ Para encerrar o script, selecione Sair ou combine as teclas `Ctrl+C` a qualquer 
 
 Você pode:
 
-* Seguir-me no Twitter: @mdamaceno
+* Seguir-me no Twitter: [@mdamaceno](https://twitter.com/mdamaceno)
 * Enviar-me um email: maadamaceno@gmail.com
 * Contribuir com o projeto
 
