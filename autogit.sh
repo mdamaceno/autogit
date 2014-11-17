@@ -26,7 +26,7 @@ options() {
 }
 
 ifoption() {
-  while true; do
+  while true; do    
     # echo "## * Opção inválida! Selecione uma das opções abaixo:"
     options
     echo ""
