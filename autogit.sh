@@ -15,18 +15,21 @@ yorn() {
 }
 
 options() {
-  echo "1 - pull"
-  echo "2 - push"
-  echo "3 - commit"
-  echo "4 - merge"
-  echo "5 - checkout"
-  echo "6 - nova branch"
-  echo "7 - status"
-  echo "0 - Sair"
+    echo
+    echo "Opções:"
+    echo
+    echo "1 - pull"
+    echo "2 - push"
+    echo "3 - commit"
+    echo "4 - merge"
+    echo "5 - checkout"
+    echo "6 - nova branch"
+    echo "7 - status"
+    echo "0 - Sair"
 }
 
 ifoption() {
-  while true; do    
+  while true; do
     # echo "## * Opção inválida! Selecione uma das opções abaixo:"
     options
     echo ""
@@ -135,9 +138,33 @@ finish() {
   echo "####### Autogit finalizado! Até mais! #######"
 }
 
+help() {
+    echo "As opções disponíveis no Autogit são:
+    
+    (1) pull        --> Atualiza os arquivos
+    (2) push        --> Envia alterações do(s) arquivo(s) para o repositório
+    (3) commit      --> Registra as mudanças do repositório
+    (4) merge       --> Junta duas ou mais ramificações do repositório
+    (5) checkout    --> Muda de ramificação
+    (6) nova branch --> Criar nova ramificação
+    (7) status      --> Verifica se há arquivos alterados
+    (0) Sair        --> Sair do Autogit"
+    echo
+    echo "----------------------------------------------"
+    echo "
+    autogit -h      --> Mostra este help"
+    echo
+}
+
 ### End Functions
 
-echo "Bem vindo ao Autogit! Selecione uma das opções abaixo:"
+echo "Bem vindo ao Autogit!
+$(basename "$0") [-h] -- programa para facilitar a entrada de comandos do Git"
+
+while getopts ':h:help:' option; do
+    help
+    exit
+done
 
 ifoption
 actions
