@@ -35,7 +35,8 @@ ifoption() {
     echo ""
     read -p "Opção: " OPTION
 
-    if [[ $OPTION == "1" ]] || [[ $OPTION == "2" ]] || [[ $OPTION == "3" ]] || [[ $OPTION == "4" ]] || [[ $OPTION == "5" ]] || [[ $OPTION == "6" ]] || [[ $OPTION == "7" ]] || [[ $OPTION == "0" ]]
+    if [[ $OPTION == "1" ]] || [[ $OPTION == "2" ]] || [[ $OPTION == "3" ]] || [[ $OPTION == "4" ]] || 
+       [[ $OPTION == "5" ]] || [[ $OPTION == "6" ]] || [[ $OPTION == "7" ]] || [[ $OPTION == "0" ]]
       then
       break
     fi
@@ -89,15 +90,27 @@ again() {
 
 actions() {
   if [[ $OPTION == "1" ]]; then
-    echo "## * Digite o nome da branch:"
-    read BRANCHWORDS
-    gpull
+    echo "## * Digite o nome da branch (default: master): "
+    read -r BRANCHWORDS
+
+    if [[ $BRANCHWORDS != "" ]]; then
+      gpull
+    else
+      git pull origin master
+    fi
+
     again
 
   elif [[ $OPTION == "2" ]]; then
-    echo "## * Digite o nome da branch:"
-    read BRANCHWORDS
-    gpush
+    echo "## * Digite o nome da branch (default: master): "
+    read -r BRANCHWORDS
+
+    if [[ $BRANCHWORDS != "" ]]; then
+      gpush
+    else
+      git push origin master
+    fi
+
     again
 
   elif [[ $OPTION == "3" ]]; then
