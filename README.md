@@ -9,8 +9,9 @@ Autogit é um script de acesso ao Git através do Terminal usando Shell Script.
 Abra o Terminal `(Ctrl+Shift+T)` e execute os comandos abaixo:
 ```
 $ git clone https://github.com/mdamaceno/autogit.git && cd autogit
-$ sudo chmod +x autogit.sh
-$ sudo ln -s autogit.sh /usr/bin/autogit
+$ sudo cp autogit.sh /usr/bin/autogit.sh
+$ echo 'alias autogit="/usr/bin/autogit.sh"' >> ~/.bashrc
+$ source ~/.bashrc
 ```
 ### Uso
 
